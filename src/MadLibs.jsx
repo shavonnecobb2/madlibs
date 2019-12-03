@@ -12,9 +12,10 @@ export class MadLibs extends React.Component {
         month: ""
     }
 
+
     render() {
         return <>
-            {this.state.redirect && <Redirect to="/story" />}
+            {this.state.redirect && <Redirect to={{pathname: "/story", state: this.state }} />}
             <form className="container">
                 <h1 className="text-center">Shavonne's Mad Mad MadLibs!</h1>
                 <div className="form-group">
@@ -54,7 +55,7 @@ export class MadLibs extends React.Component {
                     </button>
                 </div>
         </form>
-            <Story entries={this.state} />
+            {/* <Story location={{ state: this.state }} /> */}
         </>
     }
 
